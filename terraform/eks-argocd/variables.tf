@@ -36,11 +36,11 @@ variable "addons" {
     enable_cert_manager                 = false
     enable_aws_ebs_csi_resources        = false # generate gp2 and gp3 storage classes for ebs-csi
     enable_aws_cloudwatch_metrics       = false
-    enable_external_secrets             = false
-    enable_aws_load_balancer_controller = true
+    enable_external_secrets             = true
+    enable_aws_load_balancer_controller = false
     enable_aws_for_fluentbit            = false
     enable_karpenter                    = false
-    enable_aws_ingress_nginx            = true # inginx configured with AWS NLB
+    enable_aws_ingress_nginx            = false # inginx configured with AWS NLB
     # oss
     enable_metrics_server = false
     enable_kyverno        = false
@@ -89,7 +89,7 @@ variable "gitops_addons_org" {
 variable "gitops_addons_repo" {
   description = "Git repository contains for addons"
   type        = string
-  default     = "gitops-bridge-demo-na-argocon"
+  default     = "gitops-bridge-demo"
 }
 variable "gitops_addons_revision" {
   description = "Git repository revision/branch/ref for addons"
@@ -115,7 +115,7 @@ variable "gitops_workload_org" {
 variable "gitops_workload_repo" {
   description = "Git repository contains for workload"
   type        = string
-  default     = "gitops-bridge-demo-na-argocon"
+  default     = "gitops-bridge-demo"
 }
 variable "gitops_workload_revision" {
   description = "Git repository revision/branch/ref for workload"

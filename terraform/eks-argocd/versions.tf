@@ -60,7 +60,7 @@ locals {
   region = var.region
   tags = {
     Blueprint  = local.name
-    GithubRepo = "github.com/gitops-bridge-dev/gitops-bridge"
+    GithubRepo = "github.com/BENMALEKarim/gitops-bridge-demo"
   }
 }
 provider "aws" {
