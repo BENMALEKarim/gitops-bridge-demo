@@ -37,10 +37,10 @@ variable "addons" {
     enable_aws_ebs_csi_resources        = false # generate gp2 and gp3 storage classes for ebs-csi
     enable_aws_cloudwatch_metrics       = false
     enable_external_secrets             = true
-    enable_aws_load_balancer_controller = false
+    enable_aws_load_balancer_controller = true
     enable_aws_for_fluentbit            = false
     enable_karpenter                    = false
-    enable_aws_ingress_nginx            = false # inginx configured with AWS NLB
+    enable_aws_ingress_nginx            = true # inginx configured with AWS NLB
     # oss
     enable_metrics_server = false
     enable_kyverno        = false
