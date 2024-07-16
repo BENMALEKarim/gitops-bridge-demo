@@ -21,29 +21,29 @@ variable "vpc_cidr" {
 variable "region" {
   description = "AWS region"
   type        = string
-  default     = "us-west-2"
+  default     = "eu-west-3"
 }
 variable "kubernetes_version" {
   description = "Kubernetes version"
   type        = string
-  default     = "1.28"
+  default     = "1.29"
 }
 variable "addons" {
   description = "Kubernetes addons"
   type        = any
   default = {
     # aws
-    enable_cert_manager                 = true
-    enable_aws_ebs_csi_resources        = true # generate gp2 and gp3 storage classes for ebs-csi
-    enable_aws_cloudwatch_metrics       = true
+    enable_cert_manager                 = false
+    enable_aws_ebs_csi_resources        = false # generate gp2 and gp3 storage classes for ebs-csi
+    enable_aws_cloudwatch_metrics       = false
     enable_external_secrets             = true
     enable_aws_load_balancer_controller = true
     enable_aws_for_fluentbit            = true
     enable_karpenter                    = false
     enable_aws_ingress_nginx            = true # inginx configured with AWS NLB
     # oss
-    enable_metrics_server = true
-    enable_kyverno        = true
+    enable_metrics_server = false
+    enable_kyverno        = false
     # Enable if want argo manage argo from gitops
     enable_argocd = false
 
@@ -84,12 +84,12 @@ variable "addons" {
 variable "gitops_addons_org" {
   description = "Git repository org/user contains for addons"
   type        = string
-  default     = "https://github.com/gitops-bridge-dev"
+  default     = "https://github.com/BENMALEKarim"
 }
 variable "gitops_addons_repo" {
   description = "Git repository contains for addons"
   type        = string
-  default     = "kubecon-2023-na-argocon"
+  default     = "gitops-bridge-demo-na-argocon"
 }
 variable "gitops_addons_revision" {
   description = "Git repository revision/branch/ref for addons"
@@ -110,12 +110,12 @@ variable "gitops_addons_path" {
 variable "gitops_workload_org" {
   description = "Git repository org/user contains for workload"
   type        = string
-  default     = "https://github.com/gitops-bridge-dev"
+  default     = "https://github.com/BENMALEKarim"
 }
 variable "gitops_workload_repo" {
   description = "Git repository contains for workload"
   type        = string
-  default     = "kubecon-2023-na-argocon"
+  default     = "gitops-bridge-demo-na-argocon"
 }
 variable "gitops_workload_revision" {
   description = "Git repository revision/branch/ref for workload"
