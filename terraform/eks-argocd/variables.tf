@@ -39,7 +39,7 @@ variable "addons" {
     enable_external_secrets             = true
     enable_aws_load_balancer_controller = true
     enable_aws_for_fluentbit            = false
-    enable_karpenter                    = false
+    enable_karpenter                    = true
     enable_aws_ingress_nginx            = true # inginx configured with AWS NLB
     # oss
     enable_metrics_server = false

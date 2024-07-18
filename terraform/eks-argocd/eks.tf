@@ -41,10 +41,6 @@ module "eks" {
         }
       })
     }
-    # Add eks-pod-identity-agent addons
-    eks-pod-identity-agent = {
-      most_recent = true
-    }
     aws-ebs-csi-driver = {
       service_account_role_arn = module.ebs_csi_driver_irsa.iam_role_arn
     }
